@@ -1,3 +1,2 @@
 # programacion-web
-Homework respoitory, collecting **Web programming** course homework's.  
-<sub>Each homework on a dedicated repository branch.</sub>
+2nd homework, consisting on a webpage recreating [Facebook's](facebook.com) login page
