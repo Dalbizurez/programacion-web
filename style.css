@@ -18,3 +18,27 @@ body {
 .brand_description{
     font-weight: lighter;
 }
+
+form {
+    background-color: #FFFFFF;
+}
+
+.btn_login, .btn_signin{
+    font-weight: bold;
+    color: white;
+    border: 0px;
+}
+
+.btn_login{
+    background-color: #0866ff;
+}
+
+.btn_signin{
+    background-color: #42b72a;
+}
+
+.forgotten_password {
+    text-decoration: none;
+    font-weight: lighter;
+}
+
