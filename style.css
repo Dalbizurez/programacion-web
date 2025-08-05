@@ -23,7 +23,7 @@ form {
     background-color: #FFFFFF;
 }
 
-.btn_login, .btn_signin{
+.btn_login, .btn_signup{
     font-weight: bold;
     color: white;
     border: 0px;
@@ -33,7 +33,7 @@ form {
     background-color: #0866ff;
 }
 
-.btn_signin{
+.btn_signup{
     background-color: #42b72a;
 }
 
