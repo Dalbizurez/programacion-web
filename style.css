@@ -28,14 +28,15 @@ main{
 
 .brand_name{
     color: #0866ff;
+    font-size: 60px;
 }
 
 .brand_description{
     font-weight: lighter;
+    font-size: 28px;
 }
 
 .login_info {
-    background-color: #FFFFFF;
     align-items: center;
     align-content: center;
     justify-content: center;
@@ -53,25 +54,49 @@ main{
 }
 
 .data {
-    width: 40%;
+    width: 396px;
+    background-color: #FFFFFF;
+    padding-top: 10px;
+    padding-bottom: 24px;
+    margin-top: 40px;
+    border-radius: 6px;
+}
+
+.txt {
+    width: 330px;
+    align-self: center;
+    font-size: 17px;
+    border-radius: 6px;
+    height: 22px;
+    padding: 14px 16px;
 }
 
 .btn_login, .btn_signup{
     font-weight: bold;
     color: white;
     border: 0px;
+    align-self: center;
+    height: 48px;
+    border-radius: 6px;
+    padding: 0 16px;
 }
 
 .btn_login{
     background-color: #0866ff;
+    width: 320px;
+    font-size: 20px;
 }
 
 .btn_signup{
     background-color: #42b72a;
+    width: 200px;
+    font-size: 17px;
 }
 
 .forgotten_password {
     text-decoration: none;
     font-weight: lighter;
+    text-align: center;
+    font-size: 14px;
 }
 
