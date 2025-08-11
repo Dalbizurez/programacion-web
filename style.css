@@ -1,0 +1,113 @@
+body, html, main, div{
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    font-weight: lighter;
+    font-family: sans-serif;
+    background-color: #F2F4F7;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.brand{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    overflow-wrap: break-word;
+    width: 50%;
+}
+
+.brand_name{
+    color: #0866ff;
+    font-size: 60px;
+}
+
+.brand_description{
+    font-weight: lighter;
+    font-size: 28px;
+}
+
+.login_info {
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+
+    height: 30%;
+    width: 50%;
+}
+
+.data, .brand  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+}
+
+.data {
+    width: 396px;
+    background-color: #FFFFFF;
+    padding-top: 10px;
+    padding-bottom: 24px;
+    margin-top: 40px;
+    border-radius: 6px;
+}
+
+.txt {
+    width: 330px;
+    align-self: center;
+    font-size: 17px;
+    border-radius: 6px;
+    height: 22px;
+    padding: 14px 16px;
+}
+
+.btn_login, .btn_signup{
+    font-weight: bold;
+    color: white;
+    border: 0px;
+    align-self: center;
+    height: 48px;
+    border-radius: 6px;
+    padding: 0 16px;
+}
+
+.btn_login{
+    background-color: #0866ff;
+    width: 320px;
+    font-size: 20px;
+}
+
+.btn_signup{
+    background-color: #42b72a;
+    width: 200px;
+    font-size: 17px;
+}
+
+.forgotten_password {
+    text-decoration: none;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 14px;
+}
+
+.lang, .other{
+    color: #737373;
+    text-decoration: none;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 12px;
+}
+
+footer{
+    background-color: #FFFFFF;
+}
