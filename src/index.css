@@ -71,4 +71,15 @@ button:focus-visible {
   border-color: #1a1a1a;
   border: 1px solid;
   margin: 1em;
+
+  background-color: #ef4f28;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+}
+
+.carousel button {
+  flex-shrink: 0;
 }
