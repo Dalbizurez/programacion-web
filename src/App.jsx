@@ -2,9 +2,21 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import TaskList from './Components/TaskList.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
+  const tasks = [
+    { id: 1, name: 'Task One', completed: true },
+    { id: 2, name: 'Task Two', completed: false },
+    { id: 3, name: 'Task Three', completed: true },
+    { id: 4, name: 'Task Four', completed: false },
+  ]
+
+  return <>
+    <TaskList tasks={tasks.filter(task => task.completed)} />
+    <TaskList tasks={tasks.filter(task => !task.completed)} />
+  </> 
 
   return (
     <>
