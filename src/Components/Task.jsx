@@ -6,19 +6,18 @@ function Task_Component({ id, name, completed }) {
 
 
     return (
-        <div className="task" >
+        <div >
             <h2>{id} {name}</h2>
-            <p>Status: </p>
-
-            <input type="checkbox" id={`task-${id}`} checked={isCompleted} onChange={() => {
-                setIsCompleted(!isCompleted);
-            }} />
+            <span>Status: </span>
             {isCompleted ?
             <s>
-                <label htmlFor={`task-${id}`}>Completar</label>
+                <label htmlFor={`task-${id}`}>Completed </label>
             </s>
-            : <label htmlFor={`task-${id}`}>Completar</label>
-            }
+            : <label htmlFor={`task-${id}`}>Complete </label>
+        }
+        <input type="checkbox" id={`task-${id}`} checked={isCompleted} onChange={() => {
+            setIsCompleted(!isCompleted);
+        }} />
         </div>
     );
 }

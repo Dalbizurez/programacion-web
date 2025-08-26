@@ -11,6 +11,9 @@ function App() {
     { id: 2, name: 'Task Two', completed: false },
     { id: 3, name: 'Task Three', completed: true },
     { id: 4, name: 'Task Four', completed: false },
+    { id: 5, name: 'Task Five', completed: false },
+    { id: 6, name: 'Task Six', completed: true },
+    { id: 7, name: 'Task Seven', completed: false },
   ]
 
   return <>
