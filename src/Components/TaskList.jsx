@@ -7,7 +7,24 @@ function TaskList({ tasks }) {
 
     const handleDelete = (task) => {
         tasks.splice(tasks.indexOf(task), 1);
+        rerender();
+    };
+
+    const rerender = () => {
+        if (filter === "completed") {
+            setTaskList(tasks.filter(t => t.completed));
+            return;
+        } else if (filter === "pending") {
+            setTaskList(tasks.filter(t => !t.completed));
+            return;
+        }
+
         setTaskList([...tasks]);
+    }
+
+    const filterTasks = (completed) => {
+        setFilter(completed ? "completed" : "pending");
+        setTaskList(tasks.filter(t => t.completed == completed));
     }
 
     return (
