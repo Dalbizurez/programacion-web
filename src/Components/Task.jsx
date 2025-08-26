@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-function Task_Component({ task }) {
+function Task_Component({ task, onComplete }) {
     console.log(task);
     const [isCompleted, setIsCompleted] = useState(task.completed);
 
@@ -19,6 +19,7 @@ function Task_Component({ task }) {
         <input type="checkbox" id={`task-${task.id}`} checked={isCompleted} onChange={() => {
             setIsCompleted(!isCompleted);
             task.completed = !task.completed;
+            onComplete();
         }} />
         </div>
     );

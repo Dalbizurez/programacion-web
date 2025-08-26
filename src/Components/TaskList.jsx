@@ -35,7 +35,7 @@ function TaskList({ tasks }) {
             {taskList.map(task => {
                 return (
                     <div key={task.id} className="task">
-                        <Task_Component task={task} />
+                        <Task_Component task={task} onComplete = {rerender} />
                         <button onClick={() => handleDelete(task)}>Delete</button>
                     </div>
                 );
