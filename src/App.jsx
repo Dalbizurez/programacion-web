@@ -17,8 +17,7 @@ function App() {
   ]
 
   return <>
-    <TaskList tasks={tasks.filter(task => task.completed)} />
-    <TaskList tasks={tasks.filter(task => !task.completed)} />
+    <TaskList tasks={tasks} />
   </> 
 
   return (

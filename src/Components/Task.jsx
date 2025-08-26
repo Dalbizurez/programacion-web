@@ -1,22 +1,24 @@
 import { useState } from "react";
 
 
-function Task_Component({ id, name, completed }) {
-    const [isCompleted, setIsCompleted] = useState(completed);
+function Task_Component({ task }) {
+    console.log(task);
+    const [isCompleted, setIsCompleted] = useState(task.completed);
 
 
     return (
         <div >
-            <h2>{id} {name}</h2>
+            <h2>{task.id} {task.name}</h2>
             <span>Status: </span>
             {isCompleted ?
             <s>
-                <label htmlFor={`task-${id}`}>Completed </label>
+                <label htmlFor={`task-${task.id}`}>Completed </label>
             </s>
-            : <label htmlFor={`task-${id}`}>Complete </label>
+            : <label htmlFor={`task-${task.id}`}>Complete </label>
         }
-        <input type="checkbox" id={`task-${id}`} checked={isCompleted} onChange={() => {
+        <input type="checkbox" id={`task-${task.id}`} checked={isCompleted} onChange={() => {
             setIsCompleted(!isCompleted);
+            task.completed = !task.completed;
         }} />
         </div>
     );
