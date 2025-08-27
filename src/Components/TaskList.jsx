@@ -1,16 +1,15 @@
 import Task_Component from "./Task";
 import { useState } from "react";
 
-function TaskList({ tasks }) {
-    const [taskList, setTaskList] = useState(tasks);
+function TaskList({ tasks, setTaskList }) {
     const [filter, setFilter] = useState("all");
 
     const handleDelete = (task) => {
         tasks.splice(tasks.indexOf(task), 1);
-        rerender();
+        render();
     };
 
-    const rerender = () => {
+    const render = () => {
         if (filter === "completed") {
             setTaskList(tasks.filter(t => t.completed));
             return;
@@ -32,10 +31,10 @@ function TaskList({ tasks }) {
             <button onClick={() => filterTasks(true)}>Completed</button>
             <button onClick={() => filterTasks(false)}>Pending</button>
             <button onClick={() => {setTaskList(tasks); setFilter("all")}}>All</button>
-            {taskList.map(task => {
+            {tasks.map(task => {
                 return (
-                    <div key={task.id} className="task">
-                        <Task_Component task={task} onComplete = {rerender} />
+                    <div key={task.id} className="Task">
+                        <Task_Component task={task} onComplete = {render} />
                         <button onClick={() => handleDelete(task)}>Delete</button>
                     </div>
                 );

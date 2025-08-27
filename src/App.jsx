@@ -3,21 +3,30 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import TaskList from './Components/TaskList.jsx'
+import TaskForm from './Components/TaskForm.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
-  const tasks = [
+  const test = [
     { id: 1, name: 'Task One', completed: true },
     { id: 2, name: 'Task Two', completed: false },
     { id: 3, name: 'Task Three', completed: true },
-    { id: 4, name: 'Task Four', completed: false },
-    { id: 5, name: 'Task Five', completed: false },
-    { id: 6, name: 'Task Six', completed: true },
-    { id: 7, name: 'Task Seven', completed: false },
   ]
+  const [tasks, setTasks] = useState(test);
+
+
+  const addTask = (name) => {
+    const newTask = {
+      id: Date.now(),
+      name,
+      completed: false
+    };
+    setTasks([...tasks, newTask]);
+  }
 
   return <>
-    <TaskList tasks={tasks} />
+    <TaskForm onAdd={addTask} />
+    <TaskList tasks={tasks} setTaskList={setTasks} />
   </> 
 
   return (
