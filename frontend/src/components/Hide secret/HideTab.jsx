@@ -1,41 +1,48 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import SecretBox from "./Secretbox";
 import Key from "./Key";
 
 export default function HideTab() {
     const [secret, setSecret] = useState("");
+    const [key, setKey] = useState(null);
+
+    useEffect(() => {
+        if (!secret) {
+            setKey(null);
+            return;
+        }
+
+
+        encryptSecret();
+    }, [secret]);
 
     function getSecret() {
         setSecret(document.getElementById("secret").value);
     }
 
-    function encryptSecret() {
-        /*
-        fetch('http://localhost:8000/encrypt/', {
+    async function encryptSecret() {
+        const response = await fetch('http://localhost:8000/encrypt/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ secret: secret }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            alert(data)
-        })
-        .catch((error) => {
-            console.error('Error:', error);
         });
-        */
-
-        return "shhhh";
+        const data = await response.json();
+        if (response.ok) {
+            setKey(data.key);
+        } else {
+            console.error('Error encrypting secret:', data);
+        }
 
     }
 
     function switchComponent() {
         if (secret) {
+            const key = encryptSecret();
             return <div>
-                <Key value={encryptSecret()} />
+                <Key value={key} />
                 <button onClick={() => setSecret("")}>New secret</button>
             </div>
         } else {
@@ -50,7 +57,14 @@ export default function HideTab() {
 
     return (
         <div className="hide-tab">
-            {switchComponent()}
+            { secret ? (
+                <div>
+                    <Key value={key} />
+                    <button onClick={() => setSecret("")}>New secret</button>
+                </div>
+            ) : (
+                <SecretBox onClick={handleClick} />
+            )}
         </div>
     );
 }
