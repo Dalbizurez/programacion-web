@@ -22,4 +22,5 @@ from scrt import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('encrypt/', views.encrypt, name='encrypt'),
+    path('decrypt/', views.decrypt, name='decrypt'),
 ]
