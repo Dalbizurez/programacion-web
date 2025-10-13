@@ -7,7 +7,6 @@ import TabController from './components/TabController.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
     <TabController />
   </StrictMode>,
 )
