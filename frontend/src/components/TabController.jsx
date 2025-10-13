@@ -19,8 +19,8 @@ export default function TabController(){
 
     return (
         <div>
-            {activeTab === 'hide' ? <HideTab /> : <RevealTab />}
             {switchTab()}
+            {activeTab === 'hide' ? <HideTab /> : <RevealTab />}
         </div>
     );
 }
