@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import HideTab from "./Hide secret/HideTab";
-import ShowTab from "./Reveal Secret/RevealTab";
+import RevealTab from "./Reveal Secret/RevealTab";
 
 export default function TabController(){
 
@@ -19,7 +19,7 @@ export default function TabController(){
 
     return (
         <div>
-            {activeTab === 'hide' ? <HideTab /> : <ShowTab />}
+            {activeTab === 'hide' ? <HideTab /> : <RevealTab />}
             {switchTab()}
         </div>
     );

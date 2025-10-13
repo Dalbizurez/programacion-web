@@ -3,7 +3,7 @@ import { useState } from "react";
 import KeyBox from "./KeyBox";
 import Secret from "./Secret";
 
-export default function ShowTab(){
+export default function RevealTab(){
     const [secret, setSecret] = useState("");
 
     function getSecretFromApi(){
